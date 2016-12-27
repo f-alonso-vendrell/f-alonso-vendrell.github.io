@@ -14,21 +14,56 @@
             margin: 0;
         }
     </style>
+    <style>
+    table {
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+    }
+    
+    </style>
 </head>
 <body>
 
-<div id="root"></div>
-<div id="output"></div>
+    <h1>En example of math-input, each entry is a div of class math input, value is stored in math-input-value attribute</h1>
+
+<table>
+    <tr>
+       <th>math-input entry</th>
+       <th>Value (click on "see values" to refresh)</th>
+     </tr>
+    <tr>
+        <td>
+            <div id="root" class="math-input"></div>
+        </td><td>
+            <div id="output"></div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div id="root2" class="math-input"></div>
+        </td><td>
+            <div id="output2"></div>
+        </td>
+    </tr>
+</table>
+
+<button onclick='var val1= document.getElementById("root").getAttribute("math-input-value");
+                 document.getElementById("output").innerHTML=val1;
+                 var val2= document.getElementById("root2").getAttribute("math-input-value");
+                 document.getElementById("output2").innerHTML=val2;
+'>See Values</button>
 
 <script src="lib/i18n.js"></script>
 <script src="lib/icu-slim.js"></script>
 <script src="lib/katex/katex.js"></script>
-<script src="lib/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
 <script src="mathquill/mathquill.js"></script>
-<script src="lib/babel-polyfill/browser.js"></script>
+<script src="node_modules/babel-polyfill/browser.js"></script>
 <script src="build/deps.js"></script>
 <script src="build/app.js"></script>
-
 
 </body>
 </html>
