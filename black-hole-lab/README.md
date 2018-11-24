@@ -8,7 +8,7 @@
    
 ## Lab Components
 
-We have cleaned up a portion of space of 15.000.000.000 light years around our Black Hole to have a nice environment to work with and we have put in it a black hole with the given characteristics for our experiments.
+We have cleared up a portion of space of 15.000.000.000 light years around our Black Hole to have a nice environment to work with and we have put in it a black hole with the given characteristics for our experiments.
 
 This lab has 4 components:
     
@@ -18,9 +18,16 @@ This lab has 4 components:
   * Has an internal clock
   * Can send light of any frecuency from any place(s) of its spherical surface
   * Can send coded information with the light emitted: position of the spherical surface and internal clock value 
+  * Can be programmed to move and send light and information
 * You:
+  * Are inside a ship with same matter-antimatter motors as the probe
+  * Your own clock
+  * Have a set of camera sensors that can dectect light of any frequency, record the direction and decode the information the probe has sent
 
 ## Constrains
+
+* Finite: Even spending very large ammounts of energy and time experimentes must have finite ammounts. This is also applicable to stress and tidal forces suffered by the probe or you, that means... never reaching the black hole singularity :(
+* 
 
 
 ## Experiment Structure
