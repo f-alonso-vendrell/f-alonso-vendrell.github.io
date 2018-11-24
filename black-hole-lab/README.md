@@ -23,13 +23,24 @@ This lab has 4 components:
   * Are inside a ship with same matter-antimatter motors as the probe
   * Your own clock
   * Have a set of camera sensors that can dectect light of any frequency, record the direction and decode the information the probe has sent
+  * Have a set of filters to ease interpretation of information received:
+    * Event horizon: an overlapping line showing where the event horizon is supossed to be
+    * Flexi time: seeing things in real time can be very boring if you have to wait millions of years or you can miss something that happens in just fempto seconds. You can accelerate or slow the experiment data to see details
+    * God sign: A warning sign that will appear if you ever cross the event horizon. As today we can not extract information out of a black hole so what we will be showing is a non testable hypothesis based on our current physical laws.
 
 ## Constrains
 
 * Finite: Even spending very large ammounts of energy and time experimentes must have finite ammounts. This is also applicable to stress and tidal forces suffered by the probe or you, that means... never reaching the black hole singularity :(
-* 
+* Measurement error: based on the tooling used there will always certain error as this lab is an aproximation of reality.
+* Work in progress: As the experiment is prepared and coded there will be constrains due to the program used
 
 
 ## Experiment Structure
+
+   Any experiment will consist on
+   
+### Set up
+
+   the starting conditions of the experiment. Mass charge and angular momentum. probe position velocity. our position and velocity and how will the probe and us will move during the experiment. also how the probe will be programmed to send us information
 
 ## Components Calibration
