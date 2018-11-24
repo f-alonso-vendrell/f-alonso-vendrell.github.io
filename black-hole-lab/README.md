@@ -42,5 +42,21 @@ This lab has 4 components:
 ### Set up
 
    the starting conditions of the experiment. Mass charge and angular momentum. probe position velocity. our position and velocity and how will the probe and us will move during the experiment. also how the probe will be programmed to send us information
+   
+### Hypothesis 
+
+### Execution
+
+### Explanation 
 
 ## Components Calibration
+
+  Component calibration are experiments without or very far from the black hole
+  
+### Cal 1. Probe steady at 10 sec light from you sending periodic light pulses
+
+### Cal 2. Probe at 10 sec light from you aproaching you at steady low speed sending periodic light pulses
+
+### Cal 3. Probe at 10 sec light from you leaving you at steady low speed sending periodic light pulses
+
+
