@@ -1522,6 +1522,25 @@ h2 {
     mask-image:none
   }
 }
+.sidebar-container .toc-container,
+.sidebar-container.toc-container {
+  display:flex;
+  flex-direction:column;
+  gap:0;
+  height:700px;
+  -webkit-mask-image:linear-gradient(180deg,#0000 0,#000 3rem calc(100% - 3rem),#0000);
+  mask-image:linear-gradient(180deg,#0000 0,#000 3rem calc(100% - 3rem),#0000);
+  overflow:auto;
+  position:sticky;
+  top:var(--offset)
+}
+.sidebar-container .toc-container .place,
+.sidebar-container.toc-container .place {
+  margin:1rem 0;
+  padding-bottom:3rem
+}
+
+
 @media(min-width:769px) {
   .sidebar-container .toc-container,
   .sidebar-container.toc-container {

@@ -1288,6 +1288,14 @@ function showMultiLink(event,multilinkdata){
 
 }
 
+function showNotSupported(event,version){
+  var options=[{"text":"version no soportada",
+       "function":'hideMultiLink()'}];
+
+  showMultiLink(event,options);
+
+}
+
 function showMenuVersion(event,version){
 
   console.log("showMenuVersion");
@@ -1487,7 +1495,13 @@ function setVersion(version1in,version2in){
 
   timelinemenus.innerHTML = historyMenus;
 
-  setVersion(json.versions[json.versions.length-1],'');
+  var topversiontoshow = getTopSupportedVersion(json);
+
+  if (topversiontoshow != ''){
+    setVersion(topversiontoshow,'');
+  } else {
+    setVersion(json.versions[0],'');
+  }
 
   
 

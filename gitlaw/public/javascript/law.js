@@ -170,6 +170,42 @@ function historyLabel(index,versions){
 }
 
 
+
+function isVersionInContent(version,content){
+	if ( Array.isArray(content)){ 
+		for (var index=0;index<content.length;index++){
+			if (content[index].versions){
+				if (content[index].versions[version]){
+					return true;
+				}
+			} 
+			if (content[index].content){
+				if ( isVersionInContent(version,content[index].content) ){
+					return true;
+				}
+			}
+		}
+	} 
+
+	return false;
+}
+
+function getTopSupportedVersion(json){
+	var versions = json.versions;
+
+	var topversion = '';
+
+	for (var index=1;index<versions.length;index++){
+		if ( isVersionInContent(versions[index],json.content) ){
+			topversion=versions[index];
+		} else {
+			return topversion;
+		}
+	}
+
+	return topversion;
+}
+
 function printHistory(json){
 	//console.log("printHistory started");
 
@@ -179,8 +215,12 @@ function printHistory(json){
 
 	var versions = json.versions;
 
+	var topversion = getTopSupportedVersion(json);
+
 	for (var index=versions.length-1;index>=0;index--){
-		ret_html = ret_html + 
+
+		if ( ( index == 0 ) || ( versions[index]<=topversion ) ) {
+			ret_html = ret_html + 
 		'<div class="timeline__item timeline__item--right" onclick="showMenuVersion(event,\''+versions[index]+'\')">\n'+
   		'   <div class="timeline__bubble" id="bubble_'+versions[index]+'" style="background-color: #fff;border: 4px solid #000;border-radius: 50%;content: \'\';height: 20px;right: -10px;-webkit-transform: translateY(-50%);-ms-transform: translateY(-50%);transform: translateY(-50%);top: 50%;width: 20px;z-index: 3;/*! left: -10px; */position: relative;/*! margin-top: 40px; */top: 30px;left: -50px;">\n'+
   		'   </div>\n'+
@@ -190,6 +230,21 @@ function printHistory(json){
         '	</div>\n'+
         '</div></div>\n'+
         '</div>\n';
+
+		} else {
+			ret_html = ret_html +
+			'<div class="timeline__item timeline__item--right" onclick="showNotSupported(event,\''+versions[index]+'\')">\n'+
+  		'   <div class="timeline__bubble" id="bubble_'+versions[index]+'" style="background-color: #a55;border: 4px solid #000;border-radius: 50%;content: \'\';height: 20px;right: -10px;-webkit-transform: translateY(-50%);-ms-transform: translateY(-50%);transform: translateY(-50%);top: 50%;width: 20px;z-index: 3;/*! left: -10px; */position: relative;/*! margin-top: 40px; */top: 30px;left: -50px;">\n'+
+  		'   </div>\n'+
+        '   <div class="timeline__item__inner" style="position: relative;top: -10px;left: -20px;width: 100%;">\n'+
+        '   <div class="timeline__content__wrap"><div class="timeline__content" id="history_label_'+versions[index]+'" style="padding-top: 5px;padding-bottom: 5px;background-color: #a55;">\n'+
+          historyLabel(index,versions)+
+        '	</div>\n'+
+        '</div></div>\n'+
+        '</div>\n';
+		}
+
+		
 
         //ret_menus = ret_menus +
         //'<div id="menu_'+versions[index]+'" style="position: absolute;display: none;z-index: 100;background-color: #AAAAAA;" >TEXTO TEXTO</div>';
